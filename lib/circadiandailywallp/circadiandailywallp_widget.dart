@@ -691,7 +691,7 @@ class _CircadiandailywallpWidgetState extends State<CircadiandailywallpWidget>
                                       ),
                                     ),
                                     FlutterFlowAdBanner(
-                                      width: MediaQuery.of(context).size.width,
+                                      width: 320,
                                       height: 100,
                                       showsTestAd: false,
                                       iOSAdUnitID:
@@ -1098,7 +1098,7 @@ class _CircadiandailywallpWidgetState extends State<CircadiandailywallpWidget>
                                       ),
                                     ),
                                     FlutterFlowAdBanner(
-                                      width: MediaQuery.of(context).size.width,
+                                      width: 320,
                                       height: 100,
                                       showsTestAd: false,
                                       iOSAdUnitID:
@@ -1505,7 +1505,7 @@ class _CircadiandailywallpWidgetState extends State<CircadiandailywallpWidget>
                                       ),
                                     ),
                                     FlutterFlowAdBanner(
-                                      width: MediaQuery.of(context).size.width,
+                                      width: 320,
                                       height: 100,
                                       showsTestAd: false,
                                       iOSAdUnitID:
@@ -1912,7 +1912,7 @@ class _CircadiandailywallpWidgetState extends State<CircadiandailywallpWidget>
                                       ),
                                     ),
                                     FlutterFlowAdBanner(
-                                      width: MediaQuery.of(context).size.width,
+                                      width: 320,
                                       height: 100,
                                       showsTestAd: false,
                                       iOSAdUnitID:
@@ -2318,7 +2318,7 @@ class _CircadiandailywallpWidgetState extends State<CircadiandailywallpWidget>
                                       ),
                                     ),
                                     FlutterFlowAdBanner(
-                                      width: MediaQuery.of(context).size.width,
+                                      width: 320,
                                       height: 100,
                                       showsTestAd: false,
                                       iOSAdUnitID:
@@ -2724,7 +2724,7 @@ class _CircadiandailywallpWidgetState extends State<CircadiandailywallpWidget>
                                       ),
                                     ),
                                     FlutterFlowAdBanner(
-                                      width: MediaQuery.of(context).size.width,
+                                      width: 320,
                                       height: 100,
                                       showsTestAd: false,
                                       iOSAdUnitID:
@@ -3130,7 +3130,7 @@ class _CircadiandailywallpWidgetState extends State<CircadiandailywallpWidget>
                                       ),
                                     ),
                                     FlutterFlowAdBanner(
-                                      width: MediaQuery.of(context).size.width,
+                                      width: 320,
                                       height: 100,
                                       showsTestAd: false,
                                       iOSAdUnitID:
@@ -3536,7 +3536,7 @@ class _CircadiandailywallpWidgetState extends State<CircadiandailywallpWidget>
                                       ),
                                     ),
                                     FlutterFlowAdBanner(
-                                      width: MediaQuery.of(context).size.width,
+                                      width: 320,
                                       height: 100,
                                       showsTestAd: false,
                                       iOSAdUnitID:
@@ -3943,7 +3943,7 @@ class _CircadiandailywallpWidgetState extends State<CircadiandailywallpWidget>
                                       ),
                                     ),
                                     FlutterFlowAdBanner(
-                                      width: MediaQuery.of(context).size.width,
+                                      width: 320,
                                       height: 100,
                                       showsTestAd: false,
                                       iOSAdUnitID:
@@ -4350,7 +4350,7 @@ class _CircadiandailywallpWidgetState extends State<CircadiandailywallpWidget>
                                       ),
                                     ),
                                     FlutterFlowAdBanner(
-                                      width: MediaQuery.of(context).size.width,
+                                      width: 320,
                                       height: 100,
                                       showsTestAd: false,
                                       iOSAdUnitID:
@@ -4758,7 +4758,7 @@ class _CircadiandailywallpWidgetState extends State<CircadiandailywallpWidget>
                                       ),
                                     ),
                                     FlutterFlowAdBanner(
-                                      width: MediaQuery.of(context).size.width,
+                                      width: 320,
                                       height: 100,
                                       showsTestAd: false,
                                       iOSAdUnitID:

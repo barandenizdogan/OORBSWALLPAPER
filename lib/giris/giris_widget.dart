@@ -437,7 +437,7 @@ class _GirisWidgetState extends State<GirisWidget>
               ],
             ).animated([animationsMap['columnOnPageLoadAnimation']]),
             FlutterFlowAdBanner(
-              width: MediaQuery.of(context).size.width,
+              width: 320,
               height: 50,
               showsTestAd: true,
               iOSAdUnitID: 'ca-app-pub-5455528914159263/6673061197',

@@ -2307,7 +2307,7 @@ class _PetricorWidgetState extends State<PetricorWidget> {
                 ),
               ),
               FlutterFlowAdBanner(
-                width: MediaQuery.of(context).size.width,
+                width: 320,
                 height: 100,
                 showsTestAd: false,
                 iOSAdUnitID: 'ca-app-pub-5455528914159263/6673061197',
