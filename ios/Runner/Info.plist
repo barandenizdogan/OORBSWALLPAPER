@@ -34,6 +34,12 @@
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 
+	<key>NSPhotoLibraryAddUsageDescription</key>
+    <string>App requires your permission to add files to your gallery</string>
+
+    <key>NSPhotoLibraryUsageDescription</key>
+    <string>App requires your permission to add files to your gallery</string>
+
 
 
 
