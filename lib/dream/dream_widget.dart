@@ -7,10 +7,7 @@ import '../indirildi/indirildi_widget.dart';
 import '../mailscreen/mailscreen_widget.dart';
 import '../custom_code/actions/index.dart' as actions;
 import 'package:flutter/material.dart';
-import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:page_transition/page_transition.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 class DreamWidget extends StatefulWidget {
@@ -403,7 +400,7 @@ class _DreamWidgetState extends State<DreamWidget> {
                                                                   },
                                                                   child: FaIcon(
                                                                     FontAwesomeIcons
-                                                                        .chevronCircleDown,
+                                                                        .circleChevronDown,
                                                                     color: Color(
                                                                         0x66FFFFFF),
                                                                     size: 45,
@@ -663,7 +660,7 @@ class _DreamWidgetState extends State<DreamWidget> {
                                                                   },
                                                                   child: FaIcon(
                                                                     FontAwesomeIcons
-                                                                        .chevronCircleDown,
+                                                                        .circleChevronDown,
                                                                     color: Color(
                                                                         0x66FFFFFF),
                                                                     size: 45,
@@ -895,7 +892,7 @@ class _DreamWidgetState extends State<DreamWidget> {
                                                             },
                                                             child: FaIcon(
                                                               FontAwesomeIcons
-                                                                  .chevronCircleDown,
+                                                                  .circleChevronDown,
                                                               color: Color(
                                                                   0x66FFFFFF),
                                                               size: 45,
@@ -1046,7 +1043,7 @@ class _DreamWidgetState extends State<DreamWidget> {
                                                             },
                                                             child: FaIcon(
                                                               FontAwesomeIcons
-                                                                  .chevronCircleDown,
+                                                                  .circleChevronDown,
                                                               color: Color(
                                                                   0x66FFFFFF),
                                                               size: 45,
@@ -1270,7 +1267,7 @@ class _DreamWidgetState extends State<DreamWidget> {
                                                             },
                                                             child: FaIcon(
                                                               FontAwesomeIcons
-                                                                  .chevronCircleDown,
+                                                                  .circleChevronDown,
                                                               color: Color(
                                                                   0x66FFFFFF),
                                                               size: 45,
@@ -1421,7 +1418,7 @@ class _DreamWidgetState extends State<DreamWidget> {
                                                             },
                                                             child: FaIcon(
                                                               FontAwesomeIcons
-                                                                  .chevronCircleDown,
+                                                                  .circleChevronDown,
                                                               color: Color(
                                                                   0x66FFFFFF),
                                                               size: 45,

@@ -23,9 +23,7 @@ import '../silence/silence_widget.dart';
 import '../flutter_flow/admob_util.dart' as admob;
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
-import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 class CollectionsWidget extends StatefulWidget {
   const CollectionsWidget({Key key}) : super(key: key);
@@ -36,6 +34,9 @@ class CollectionsWidget extends StatefulWidget {
 
 class _CollectionsWidgetState extends State<CollectionsWidget>
     with TickerProviderStateMixin {
+  bool _showBackToTopButton = false;
+  ScrollController _scrollController;
+  PageController pageViewController;
   bool interstitialAdSuccess;
   final scaffoldKey = GlobalKey<ScaffoldState>();
   final animationsMap = {
@@ -105,6 +106,16 @@ class _CollectionsWidgetState extends State<CollectionsWidget>
 
   @override
   void initState() {
+    _scrollController = ScrollController()
+      ..addListener(() {
+        setState(() {
+          if (_scrollController.offset >= 600) {
+            _showBackToTopButton = true; // show the back-to-top button
+          } else {
+            _showBackToTopButton = false; // hide the back-to-top button
+          }
+        });
+      });
     super.initState();
     // On page load action.
     SchedulerBinding.instance?.addPostFrameCallback((_) async {
@@ -120,6 +131,15 @@ class _CollectionsWidgetState extends State<CollectionsWidget>
           .where((anim) => anim.trigger == AnimationTrigger.onPageLoad),
       this,
     );
+  }
+  @override
+  void dispose() {
+    _scrollController.dispose(); // dispose the controller
+    super.dispose();
+  }
+  void _scrollToTop() {
+    _scrollController.animateTo(0,
+        duration: const Duration(seconds: 1), curve: Curves.linear);
   }
 
   @override
@@ -161,6 +181,7 @@ class _CollectionsWidgetState extends State<CollectionsWidget>
               ),
             ),
             child: SingleChildScrollView(
+              controller: _scrollController,
               child: Column(
                 mainAxisSize: MainAxisSize.max,
                 children: [
@@ -1741,6 +1762,15 @@ Refreshing */
             ),
           ),
         ],
+      ),
+      floatingActionButton: _showBackToTopButton == false
+          ? null
+            : FloatingActionButton(
+              onPressed: _scrollToTop,
+              backgroundColor: Color(0x34D81B60),
+              child: const Icon(Icons.arrow_upward_sharp,
+                color: Color(0x34CC36B9),
+                size: 24,),
       ),
     );
   }

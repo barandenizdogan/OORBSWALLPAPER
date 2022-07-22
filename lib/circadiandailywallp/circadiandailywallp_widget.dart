@@ -13,7 +13,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:google_fonts/google_fonts.dart';
+
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 class CircadiandailywallpWidget extends StatefulWidget {
@@ -49,6 +49,8 @@ class _CircadiandailywallpWidgetState extends State<CircadiandailywallpWidget>
   bool interstitialAdSuccess1;
   PageController pageViewController12;
   bool interstitialAdSucces;
+  bool _showBackToTopButton = false;
+  ScrollController _scrollController;
   final scaffoldKey = GlobalKey<ScaffoldState>();
   final animationsMap = {
     'rowOnPageLoadAnimation1': AnimationInfo(
@@ -231,6 +233,16 @@ class _CircadiandailywallpWidgetState extends State<CircadiandailywallpWidget>
 
   @override
   void initState() {
+    _scrollController = ScrollController()
+      ..addListener(() {
+        setState(() {
+          if (_scrollController.offset >= 600) {
+            _showBackToTopButton = true; // show the back-to-top button
+          } else {
+            _showBackToTopButton = false; // hide the back-to-top button
+          }
+        });
+      });
     super.initState();
     // On page load action.
     SchedulerBinding.instance?.addPostFrameCallback((_) async {
@@ -246,6 +258,15 @@ class _CircadiandailywallpWidgetState extends State<CircadiandailywallpWidget>
           .where((anim) => anim.trigger == AnimationTrigger.onPageLoad),
       this,
     );
+  }
+  @override
+  void dispose() {
+    _scrollController.dispose(); // dispose the controller
+    super.dispose();
+  }
+  void _scrollToTop() {
+    _scrollController.animateTo(0,
+        duration: const Duration(seconds: 1), curve: Curves.linear);
   }
 
   @override
@@ -298,6 +319,7 @@ class _CircadiandailywallpWidgetState extends State<CircadiandailywallpWidget>
                       scrollDirection: Axis.horizontal,
                       children: [
                         SingleChildScrollView(
+                          controller: _scrollController,
                           child: Column(
                             mainAxisSize: MainAxisSize.max,
                             crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -706,6 +728,7 @@ class _CircadiandailywallpWidgetState extends State<CircadiandailywallpWidget>
                           ),
                         ),
                         SingleChildScrollView(
+                          controller: _scrollController,
                           child: Column(
                             mainAxisSize: MainAxisSize.max,
                             crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -1113,6 +1136,7 @@ class _CircadiandailywallpWidgetState extends State<CircadiandailywallpWidget>
                           ),
                         ),
                         SingleChildScrollView(
+                          controller: _scrollController,
                           child: Column(
                             mainAxisSize: MainAxisSize.max,
                             crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -1520,6 +1544,7 @@ class _CircadiandailywallpWidgetState extends State<CircadiandailywallpWidget>
                           ),
                         ),
                         SingleChildScrollView(
+                          controller: _scrollController,
                           child: Column(
                             mainAxisSize: MainAxisSize.max,
                             crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -1927,6 +1952,7 @@ class _CircadiandailywallpWidgetState extends State<CircadiandailywallpWidget>
                           ),
                         ),
                         SingleChildScrollView(
+                          controller: _scrollController,
                           child: Column(
                             mainAxisSize: MainAxisSize.max,
                             crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -2333,6 +2359,7 @@ class _CircadiandailywallpWidgetState extends State<CircadiandailywallpWidget>
                           ),
                         ),
                         SingleChildScrollView(
+                          controller: _scrollController,
                           child: Column(
                             mainAxisSize: MainAxisSize.max,
                             crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -2739,6 +2766,7 @@ class _CircadiandailywallpWidgetState extends State<CircadiandailywallpWidget>
                           ),
                         ),
                         SingleChildScrollView(
+                          controller: _scrollController,
                           child: Column(
                             mainAxisSize: MainAxisSize.max,
                             crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -3145,6 +3173,7 @@ class _CircadiandailywallpWidgetState extends State<CircadiandailywallpWidget>
                           ),
                         ),
                         SingleChildScrollView(
+                          controller: _scrollController,
                           child: Column(
                             mainAxisSize: MainAxisSize.max,
                             crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -3551,6 +3580,7 @@ class _CircadiandailywallpWidgetState extends State<CircadiandailywallpWidget>
                           ),
                         ),
                         SingleChildScrollView(
+                          controller: _scrollController,
                           child: Column(
                             mainAxisSize: MainAxisSize.max,
                             crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -3958,6 +3988,7 @@ class _CircadiandailywallpWidgetState extends State<CircadiandailywallpWidget>
                           ),
                         ),
                         SingleChildScrollView(
+                          controller: _scrollController,
                           child: Column(
                             mainAxisSize: MainAxisSize.max,
                             crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -4365,6 +4396,7 @@ class _CircadiandailywallpWidgetState extends State<CircadiandailywallpWidget>
                           ),
                         ),
                         SingleChildScrollView(
+                          controller: _scrollController,
                           child: Column(
                             mainAxisSize: MainAxisSize.max,
                             crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -4888,6 +4920,15 @@ class _CircadiandailywallpWidgetState extends State<CircadiandailywallpWidget>
           ],
         ),
       ),
+        floatingActionButton: _showBackToTopButton == false
+            ? null
+              : FloatingActionButton(
+                onPressed: _scrollToTop,
+                backgroundColor: Color(0x34D81B60),
+                child: const Icon(Icons.arrow_upward_sharp,
+                color: Color(0x34CC36B9),
+                size: 24,),
+        )
     );
   }
 }
